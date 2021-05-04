@@ -1,0 +1,20 @@
+{% extends './base.html' %}
+{% load static %}
+
+{% block food-container %}
+    {% for food in Menus %}
+   <div class="food">
+      <img src={% get_static_prefix %}{{ food.img_path }} width="300px" height="200px"/>
+      <div class="info">
+        <h3>{{ food.name }}</h3>
+        <P>{{ food.description }}</p>
+          <P>{{ food.price }} 원</p>
+          {% for i in eng %}
+              {% if i in food.img_path %}
+        <a href="/foods/{{ i }}">메뉴 보기</a>
+              {% endif %}
+              {% endfor %}
+      </div>
+    </div>
+    {% endfor %}
+{% endblock food-container%}

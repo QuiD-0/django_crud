@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>코스토랑</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href={% static 'foods/css/styles.css' %}>
+</head>
+<body>
+<p>오늘은 {{ date }}입니다.</p>
+<h1>코스토랑</h1>
+<h2>넌 코딩할때가 제일 이뻐</h2>
+
+<div class="food-container">
+
+    {% block food-container %}
+    {% endblock food-container %}
+
+</div>
+</body>
+</html>
+
